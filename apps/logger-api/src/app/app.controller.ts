@@ -19,11 +19,13 @@ export class AppController {
   @Get('hello/:name')
   getHelloName(@Param('name') name: string) {
     this.logger.log(`Hello ${name} endpoint was called`);
+
     try {
       return this.appService.getHelloName(name);
     } catch (error) {
       this.logger.error(`Error in getHelloPerson: ${error.message}`, error.stack);
       throw error; // Let the exception filter handle it
     }
+
   }
 }

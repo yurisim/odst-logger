@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 
-describe('AppController (Additional Tests)', () => {
+describe('AppController', () => {
   let appController: AppController
   let appService: AppService
 
@@ -43,4 +43,4 @@ describe('AppController (Additional Tests)', () => {
       expect(result).toEqual({ message: null })
     })
   })
-})
+});
