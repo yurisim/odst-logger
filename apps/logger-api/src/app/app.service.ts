@@ -13,12 +13,12 @@ export class AppService {
       throw new BadRequestException('Name cannot be empty');
     }
 
-    if (trimmedName.length > 10) {
+    if (trimmedName.length > 15) {
       throw new BadRequestException('Name cannot be longer than 10 characters');
     }
 
     if (trimmedName.toLowerCase() === 'brenda') {
-      throw new BadRequestException('Name cannot be Brenda');
+      throw new BadRequestException('Brenda is not allowed in this application');
     }
 
     return `Hello, ${trimmedName}!`;
