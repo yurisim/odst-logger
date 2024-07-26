@@ -6,12 +6,22 @@ export class AppService {
     return { message: 'Hello DOU :)' };
   }
 
-  getHelloPerson(name: string) {
-    if (!name || name.trim().length === 0) {
+  getHelloName(name: string) {
+    const trimmedName = name.trim();
+
+    if (!trimmedName) {
       throw new BadRequestException('Name cannot be empty');
     }
-    // Additional business logic...
-    return `Hello, ${name}!`;
+
+    if (trimmedName.length > 10) {
+      throw new BadRequestException('Name cannot be longer than 10 characters');
+    }
+
+    if (trimmedName.toLowerCase() === 'brenda') {
+      throw new BadRequestException('Name cannot be Brenda');
+    }
+
+    return `Hello, ${trimmedName}!`;
   }
 }
 
